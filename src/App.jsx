@@ -3,9 +3,12 @@ import { useState } from "react";
 import employees from "./data/applicants.json";
 import EmployeeCard from "./components/EmployeeCard";
 import EmployeeModal from "./components/EmployeeModal";
+import { SearchBar } from "./components/SearchAndControls";
+import { useEmployeeFilters } from "./hooks/useEmployeeFilters";
 
 export default function App() {
   const [selectedEmployee, setSelectedEmployee] = useState(null);
+  const { filtered, search, setSearch } = useEmployeeFilters(employees);
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -20,19 +23,37 @@ export default function App() {
               Employee Directory
             </span>
           </div>
+          <span className="text-xs text-gray-500">
+            {filtered.length} of {employees.length} employees
+          </span>
         </div>
       </header>
 
-      <main className="max-w-6xl mx-auto px-6 pb-12">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-          {employees.map((employee) => (
-            <EmployeeCard
-              key={employee.id}
-              employee={employee}
-              onClick={setSelectedEmployee}
-            />
-          ))}
+      <div className="max-w-6xl mx-auto px-6 py-6 space-y-4">
+        <div className="flex flex-col sm:flex-row gap-3">
+          <div className="flex-1">
+            <SearchBar value={search} onChange={setSearch} />
+          </div>
         </div>
+      </div>
+
+      <main className="max-w-6xl mx-auto px-6 pb-12">
+        {filtered.length === 0 ? (
+          <div className="text-center py-20 text-gray-400">
+            <p className="text-lg font-medium">No employees found</p>
+            <p className="text-sm mt-1">Try adjusting your search or filters</p>
+          </div>
+        ) : (
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {filtered.map((employee) => (
+              <EmployeeCard
+                key={employee.id}
+                employee={employee}
+                onClick={setSelectedEmployee}
+              />
+            ))}
+          </div>
+        )}
       </main>
       {/* Modal */}
       {selectedEmployee && (
