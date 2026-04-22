@@ -1,7 +1,12 @@
+import { useState } from "react";
+
 import employees from "./data/applicants.json";
 import EmployeeCard from "./components/EmployeeCard";
+import EmployeeModal from "./components/EmployeeModal";
 
 export default function App() {
+  const [selectedEmployee, setSelectedEmployee] = useState(null);
+
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Header */}
@@ -21,10 +26,21 @@ export default function App() {
       <main className="max-w-6xl mx-auto px-6 pb-12">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {employees.map((employee) => (
-            <EmployeeCard key={employee.id} employee={employee} />
+            <EmployeeCard
+              key={employee.id}
+              employee={employee}
+              onClick={setSelectedEmployee}
+            />
           ))}
         </div>
       </main>
+      {/* Modal */}
+      {selectedEmployee && (
+        <EmployeeModal
+          employee={selectedEmployee}
+          onClose={() => setSelectedEmployee(null)}
+        />
+      )}
     </div>
   );
 }
