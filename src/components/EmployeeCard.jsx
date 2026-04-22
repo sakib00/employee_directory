@@ -1,39 +1,5 @@
-const STATUS_STYLES = {
-  Active: "bg-emerald-100 text-emerald-700 ring-1 ring-emerald-200",
-  "On Leave": "bg-amber-100 text-amber-700 ring-1 ring-amber-200",
-  Probation: "bg-rose-100 text-rose-700 ring-1 ring-rose-200",
-};
-
-const AVATAR_COLORS = [
-  "bg-violet-500",
-  "bg-sky-500",
-  "bg-emerald-500",
-  "bg-orange-500",
-  "bg-pink-500",
-  "bg-indigo-500",
-];
-
-function getInitials(name) {
-  return name
-    .split(" ")
-    .map((n) => n[0])
-    .join("")
-    .toUpperCase()
-    .slice(0, 2);
-}
-
-function getAvatarColor(name) {
-  const index = name.charCodeAt(0) % AVATAR_COLORS.length;
-  return AVATAR_COLORS[index];
-}
-
-function formatDate(dateStr) {
-  return new Date(dateStr).toLocaleDateString("en-AU", {
-    day: "numeric",
-    month: "short",
-    year: "numeric",
-  });
-}
+import { STATUS_STYLES } from "../constants/CONSTANTS";
+import { formatDate, getAvatarColor, getInitials } from "../utils/helper";
 
 export default function EmployeeCard({ employee, onClick }) {
   const initials = getInitials(employee.name);

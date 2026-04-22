@@ -1,18 +1,4 @@
-const DEPARTMENTS = [
-  "All",
-  "Engineering",
-  "Operations",
-  "Product",
-  "Infrastructure",
-  "Data",
-];
-
-const SORT_OPTIONS = [
-  { value: "name-asc", label: "A → Z" },
-  { value: "name-desc", label: "Z → A" },
-  { value: "date-new", label: "Newest" },
-  { value: "date-old", label: "Oldest" },
-];
+import { DEPARTMENTS, SORT_OPTIONS } from "../constants/CONSTANTS";
 
 export function SearchBar({ value, onChange }) {
   return (
