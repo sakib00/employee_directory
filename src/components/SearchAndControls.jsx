@@ -1,3 +1,12 @@
+const DEPARTMENTS = [
+  "All",
+  "Engineering",
+  "Operations",
+  "Product",
+  "Infrastructure",
+  "Data",
+];
+
 export function SearchBar({ value, onChange }) {
   return (
     <div className="relative">
@@ -45,6 +54,40 @@ export function SearchBar({ value, onChange }) {
           </svg>
         </button>
       )}
+    </div>
+  );
+}
+
+export function DepartmentFilter({ value, onChange }) {
+  return (
+    <div className="relative">
+      <select
+        value={value}
+        onChange={(e) => onChange(e.target.value)}
+        className="w-full appearance-none pl-4 pr-9 py-2.5 rounded-xl bg-white ring-1 ring-gray-200 text-sm text-gray-700 focus:outline-none focus:ring-2 focus:ring-[#4ade80]/50 transition cursor-pointer"
+      >
+        {DEPARTMENTS.map((dept) => (
+          <option key={dept} value={dept}>
+            {dept === "All" ? "All Departments" : dept}
+          </option>
+        ))}
+      </select>
+      
+      <div className="absolute inset-y-0 right-3 flex items-center pointer-events-none">
+        <svg
+          className="w-4 h-4 text-gray-400"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={2}
+            d="M19 9l-7 7-7-7"
+          />
+        </svg>
+      </div>
     </div>
   );
 }

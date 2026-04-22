@@ -3,12 +3,13 @@ import { useState } from "react";
 import employees from "./data/applicants.json";
 import EmployeeCard from "./components/EmployeeCard";
 import EmployeeModal from "./components/EmployeeModal";
-import { SearchBar } from "./components/SearchAndControls";
+import { SearchBar, DepartmentFilter } from "./components/SearchAndControls";
 import { useEmployeeFilters } from "./hooks/useEmployeeFilters";
 
 export default function App() {
   const [selectedEmployee, setSelectedEmployee] = useState(null);
-  const { filtered, search, setSearch } = useEmployeeFilters(employees);
+  const { filtered, search, setSearch, department, setDepartment } =
+    useEmployeeFilters(employees);
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -33,6 +34,9 @@ export default function App() {
         <div className="flex flex-col sm:flex-row gap-3">
           <div className="flex-1">
             <SearchBar value={search} onChange={setSearch} />
+          </div>
+          <div className="sm:w-52">
+            <DepartmentFilter value={department} onChange={setDepartment} />
           </div>
         </div>
       </div>
