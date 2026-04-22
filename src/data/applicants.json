@@ -6,7 +6,11 @@
     "department": "Engineering",
     "status": "Active",
     "startDate": "2022-03-14",
-    "skills": ["React", "TypeScript", "GraphQL"],
+    "skills": [
+      "React",
+      "TypeScript",
+      "GraphQL"
+    ],
     "avatar": null
   },
   {
@@ -16,7 +20,11 @@
     "department": "Engineering",
     "status": "Active",
     "startDate": "2021-06-01",
-    "skills": ["React", "Node.js", "AWS"],
+    "skills": [
+      "React",
+      "Node.js",
+      "AWS"
+    ],
     "avatar": null
   },
   {
@@ -26,7 +34,11 @@
     "department": "Operations",
     "status": "On Leave",
     "startDate": "2023-01-09",
-    "skills": ["Lending", "Compliance", "Excel"],
+    "skills": [
+      "Lending",
+      "Compliance",
+      "Excel"
+    ],
     "avatar": null
   },
   {
@@ -36,7 +48,11 @@
     "department": "Product",
     "status": "Active",
     "startDate": "2022-11-21",
-    "skills": ["Figma", "CSS", "User Research"],
+    "skills": [
+      "Figma",
+      "CSS",
+      "User Research"
+    ],
     "avatar": null
   },
   {
@@ -46,7 +62,11 @@
     "department": "Engineering",
     "status": "Active",
     "startDate": "2023-07-17",
-    "skills": ["Playwright", "JavaScript", "CI/CD"],
+    "skills": [
+      "Playwright",
+      "JavaScript",
+      "CI/CD"
+    ],
     "avatar": null
   },
   {
@@ -56,7 +76,11 @@
     "department": "Engineering",
     "status": "Probation",
     "startDate": "2024-09-02",
-    "skills": ["Vue.js", "TypeScript", "REST APIs"],
+    "skills": [
+      "Vue.js",
+      "TypeScript",
+      "REST APIs"
+    ],
     "avatar": null
   },
   {
@@ -66,7 +90,11 @@
     "department": "Infrastructure",
     "status": "Active",
     "startDate": "2021-02-15",
-    "skills": ["AWS", "Terraform", "Docker"],
+    "skills": [
+      "AWS",
+      "Terraform",
+      "Docker"
+    ],
     "avatar": null
   },
   {
@@ -76,7 +104,11 @@
     "department": "Operations",
     "status": "Active",
     "startDate": "2022-08-08",
-    "skills": ["Lending", "Customer Service", "Compliance"],
+    "skills": [
+      "Lending",
+      "Customer Service",
+      "Compliance"
+    ],
     "avatar": null
   },
   {
@@ -86,47 +118,67 @@
     "department": "Data",
     "status": "Active",
     "startDate": "2023-04-03",
-    "skills": ["Python", "SQL", "dbt"],
+    "skills": [
+      "Python",
+      "SQL",
+      "dbt"
+    ],
     "avatar": null
   },
   {
-    "id": 9,
+    "id": 10,
     "name": "Lisa Turner",
     "role": "Data Engineer",
     "department": "Data",
     "status": "Active",
     "startDate": "2023-04-03",
-    "skills": ["Python", "SQL", "dbt"],
+    "skills": [
+      "Python",
+      "SQL",
+      "dbt"
+    ],
     "avatar": null
   },
   {
-    "id": 10,
+    "id": 11,
     "name": "Megan Costa",
     "role": "Software Engineer",
     "department": "Engineering",
     "status": "Active",
     "startDate": "2020-11-30",
-    "skills": ["React", "C#", ".NET"],
+    "skills": [
+      "React",
+      "C#",
+      ".NET"
+    ],
     "avatar": null
   },
   {
-    "id": 11,
+    "id": 12,
     "name": "Alex Turner",
     "role": "Senior Software Engineer",
     "department": "Engineering",
     "status": "On Leave",
     "startDate": "2019-05-20",
-    "skills": ["React", "TypeScript", "Mentoring"],
+    "skills": [
+      "React",
+      "TypeScript",
+      "Mentoring"
+    ],
     "avatar": null
   },
   {
-    "id": 12,
+    "id": 13,
     "name": "Yuki Tanaka",
     "role": "Software Engineer",
     "department": "Engineering",
     "status": "Active",
     "startDate": "2024-01-15",
-    "skills": ["Angular", "TypeScript", "RxJS"],
+    "skills": [
+      "Angular",
+      "TypeScript",
+      "RxJS"
+    ],
     "avatar": null
   }
 ]
