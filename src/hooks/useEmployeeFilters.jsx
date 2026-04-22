@@ -3,6 +3,7 @@ import { useState } from "react";
 export function useEmployeeFilters(employees) {
   const [search, setSearch] = useState("");
   const [department, setDepartment] = useState("All");
+  const [sort, setSort] = useState("name-asc");
 
   let filtered = employees;
   if (department !== "All") {
@@ -16,11 +17,18 @@ export function useEmployeeFilters(employees) {
     );
   }
 
+  filtered = [...filtered].sort((a, b) => {
+    if (sort === "name-asc") return a.name.localeCompare(b.name);
+    if (sort === "name-desc") return b.name.localeCompare(a.name);
+  });
+
   return {
     filtered,
     search,
     setSearch,
     department,
     setDepartment,
+    sort,
+    setSort,
   };
 }

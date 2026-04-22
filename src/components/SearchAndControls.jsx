@@ -7,6 +7,11 @@ const DEPARTMENTS = [
   "Data",
 ];
 
+const SORT_OPTIONS = [
+  { value: "name-asc", label: "A → Z" },
+  { value: "name-desc", label: "Z → A" },
+];
+
 export function SearchBar({ value, onChange }) {
   return (
     <div className="relative">
@@ -72,7 +77,7 @@ export function DepartmentFilter({ value, onChange }) {
           </option>
         ))}
       </select>
-      
+
       <div className="absolute inset-y-0 right-3 flex items-center pointer-events-none">
         <svg
           className="w-4 h-4 text-gray-400"
@@ -88,6 +93,32 @@ export function DepartmentFilter({ value, onChange }) {
           />
         </svg>
       </div>
+    </div>
+  );
+}
+
+export function SortControls({ value, onChange }) {
+  return (
+    <div className="flex items-center gap-1.5 flex-wrap">
+      <span className="text-xs font-semibold text-gray-400 uppercase tracking-wider mr-1">
+        Sort
+      </span>
+      {SORT_OPTIONS.map((option) => {
+        const isActive = value === option.value;
+        return (
+          <button
+            key={option.value}
+            onClick={() => onChange(option.value)}
+            className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-all duration-150 ${
+              isActive
+                ? "bg-[#0d0d0d] text-[#4ade80]"
+                : "bg-white text-gray-500 ring-1 ring-gray-200 hover:ring-gray-300 hover:text-gray-700"
+            }`}
+          >
+            {option.label}
+          </button>
+        );
+      })}
     </div>
   );
 }

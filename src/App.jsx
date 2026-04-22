@@ -3,13 +3,24 @@ import { useState } from "react";
 import employees from "./data/applicants.json";
 import EmployeeCard from "./components/EmployeeCard";
 import EmployeeModal from "./components/EmployeeModal";
-import { SearchBar, DepartmentFilter } from "./components/SearchAndControls";
+import {
+  SearchBar,
+  DepartmentFilter,
+  SortControls,
+} from "./components/SearchAndControls";
 import { useEmployeeFilters } from "./hooks/useEmployeeFilters";
 
 export default function App() {
   const [selectedEmployee, setSelectedEmployee] = useState(null);
-  const { filtered, search, setSearch, department, setDepartment } =
-    useEmployeeFilters(employees);
+  const {
+    filtered,
+    search,
+    setSearch,
+    department,
+    setDepartment,
+    sort,
+    setSort,
+  } = useEmployeeFilters(employees);
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -39,6 +50,7 @@ export default function App() {
             <DepartmentFilter value={department} onChange={setDepartment} />
           </div>
         </div>
+        <SortControls value={sort} onChange={setSort} />
       </div>
 
       <main className="max-w-6xl mx-auto px-6 pb-12">
