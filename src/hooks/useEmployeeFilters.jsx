@@ -20,6 +20,10 @@ export function useEmployeeFilters(employees) {
   filtered = [...filtered].sort((a, b) => {
     if (sort === "name-asc") return a.name.localeCompare(b.name);
     if (sort === "name-desc") return b.name.localeCompare(a.name);
+    if (sort === "date-new")
+      return new Date(b.startDate) - new Date(a.startDate);
+    if (sort === "date-old")
+      return new Date(a.startDate) - new Date(b.startDate);
   });
 
   return {

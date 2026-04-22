@@ -10,6 +10,8 @@ const DEPARTMENTS = [
 const SORT_OPTIONS = [
   { value: "name-asc", label: "A → Z" },
   { value: "name-desc", label: "Z → A" },
+  { value: "date-new", label: "Newest" },
+  { value: "date-old", label: "Oldest" },
 ];
 
 export function SearchBar({ value, onChange }) {
